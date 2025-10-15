@@ -1,75 +1,63 @@
-# DEMI - Decentralized Market Intelligence Protocol
+# DEMI Token Presale - React Setup Instructions
 
-Frontend application for the DEMI token presale.
+## What You Need
 
-## 🔀 Two Versions Available
+This branch contains only the essentials:
+- Contract ABI (`src/lib/demi-abi.json`)
+- DEMI logos (`public/assets/`)
+- Environment variables template (`.env.example`)
 
-### **This Branch: Pure React with React Router**
-Traditional React setup with manual routing via React Router.
+## Build It Your Way
 
-### **Main Branch: Next.js** 
-File-based routing with Next.js (more modern, better SEO).
+Set up React however you prefer:
+- Create React App (CRA)
+- Vite
+- Your own custom setup
 
-**Choose whichever you prefer!**
-
----
-
-## Tech Stack (This Branch)
-- React 19 with TypeScript
-- React Router for routing
-- Tailwind CSS
-- Wagmi/Viem (Web3)
-- RainbowKit (Wallet connection)
-
-## Getting Started
+## Required Dependencies
 ```bash
-npm install
-npm start
+npm install wagmi viem@2.x @tanstack/react-query @rainbow-me/rainbowkit
+npm install react-router-dom  # If you want routing
 ```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## What's Already Set Up
-
-✅ React Router configured  
-✅ Web3 libraries installed (wagmi, viem, rainbowkit)  
-✅ Contract ABI at `src/lib/demi-abi.json`  
-✅ DEMI logos in `public/assets/`  
-✅ Tailwind CSS ready  
-✅ TypeScript configured  
-
-## What You Need to Build
-
-1. **Landing Page** - Hero section with DEMI branding
-2. **Wallet Connection** - Use RainbowKit
-3. **Buy Form** - Input USDT/USDC, show DEMI amount, approve & buy buttons
-4. **User Dashboard** - Show DEMI balance
 
 ## Environment Variables
 
-Create `.env.local`:
+Copy `.env.example` to `.env.local` and fill in after mainnet deployment:
 ```
 REACT_APP_DEMI_CONTRACT_ADDRESS=
+REACT_APP_USDT_ADDRESS=0xc2132D05D31c914a87C6611C10748AEb04B58e8F
+REACT_APP_USDC_ADDRESS=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+REACT_APP_CHAIN_ID=137
 REACT_APP_POLYGON_RPC_URL=https://polygon-rpc.com
 ```
 
-(Contract address will be provided after mainnet deployment)
+## Contract Integration
 
-## Project Structure
-```
-demi-app/
-├── src/
-│   ├── App.tsx         # Main app with React Router
-│   ├── index.tsx       # Entry point
-│   ├── pages/          # Page components
-│   │   └── Home.tsx
-│   ├── components/     # Reusable components (add yours here)
-│   └── lib/
-│       └── demi-abi.json  # Smart contract ABI
-├── public/
-│   └── assets/         # DEMI logos
-```
+The ABI is in `src/lib/demi-abi.json`. 
 
-## Ready to Build!
+Key functions:
+- `buyWithUSDT(uint256 amount)` - Buy DEMI with USDT
+- `buyWithUSDC(uint256 amount)` - Buy DEMI with USDC  
+- `balanceOf(address)` - Check DEMI balance
+- `tokenPrice()` - Current price (6 decimals, e.g., 10000 = $0.01)
+- `calculateTokenAmount(uint256 usdAmount)` - Calculate DEMI for USD
 
-Everything is set up. Start coding! 🚀
+## What to Build
+
+1. Wallet connection (RainbowKit recommended)
+2. Buy form with USDT/USDC input
+3. Approve + Buy transaction flow
+4. Display user's DEMI balance
+
+## Assets
+
+DEMI logos are in `public/assets/`:
+- `demi_logo_transparent_background.svg`
+- `demi_logo_white_background.svg`
+
+## Network
+
+- **Polygon Mainnet** (Chain ID: 137)
+- Contract address: TBD (will provide after deployment)
+
+Build it however you like! 🚀
