@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DEMI - Decentralized Market Intelligence Protocol
+
+Frontend application for the DEMI token presale.
+
+## Tech Stack
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Wagmi/Viem (Web3 integration)
+- RainbowKit (Wallet connection)
 
 ## Getting Started
-
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Smart Contract Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contract details will be provided after mainnet deployment.
 
-## Learn More
+### Required Info:
+- Contract Address: TBD
+- Network: Polygon Mainnet (Chain ID: 137)
+- Supported Tokens: USDT, USDC
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create `.env.local`:
+```
+NEXT_PUBLIC_DEMI_CONTRACT_ADDRESS=
+NEXT_PUBLIC_POLYGON_RPC_URL=https://polygon-rpc.com
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
+```
+demi-app/
+├── src/
+│   ├── app/          # Next.js app router pages
+│   ├── components/   # React components
+│   ├── lib/          # Utilities and contract ABIs
+│   └── styles/       # Global styles
+├── public/
+│   └── assets/       # Logo, images, icons
+└── README.md
+```
 
-## Deploy on Vercel
+## Features to Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Landing Page** - Hero section with DEMI branding
+2. **Wallet Connection** - Connect MetaMask/WalletConnect
+3. **Buy Form** - Input USDT/USDC amount, get DEMI
+4. **User Dashboard** - Show DEMI balance and purchase history
+5. **Price Display** - Current DEMI price ($0.01 initially)
