@@ -1,4 +1,4 @@
-# DEMI - Decentralized Market Intelligence Protocol
+# DEMI 
 
 Frontend application for the DEMI token presale.
 
