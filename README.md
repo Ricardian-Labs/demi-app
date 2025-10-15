@@ -2,55 +2,74 @@
 
 Frontend application for the DEMI token presale.
 
-## Tech Stack
-- Next.js 15
-- TypeScript
+## 🔀 Two Versions Available
+
+### **This Branch: Pure React with React Router**
+Traditional React setup with manual routing via React Router.
+
+### **Main Branch: Next.js** 
+File-based routing with Next.js (more modern, better SEO).
+
+**Choose whichever you prefer!**
+
+---
+
+## Tech Stack (This Branch)
+- React 19 with TypeScript
+- React Router for routing
 - Tailwind CSS
-- Wagmi/Viem (Web3 integration)
+- Wagmi/Viem (Web3)
 - RainbowKit (Wallet connection)
 
 ## Getting Started
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Smart Contract Integration
+## What's Already Set Up
 
-Contract details will be provided after mainnet deployment.
+✅ React Router configured  
+✅ Web3 libraries installed (wagmi, viem, rainbowkit)  
+✅ Contract ABI at `src/lib/demi-abi.json`  
+✅ DEMI logos in `public/assets/`  
+✅ Tailwind CSS ready  
+✅ TypeScript configured  
 
-### Required Info:
-- Contract Address: TBD
-- Network: Polygon Mainnet (Chain ID: 137)
-- Supported Tokens: USDT, USDC
+## What You Need to Build
+
+1. **Landing Page** - Hero section with DEMI branding
+2. **Wallet Connection** - Use RainbowKit
+3. **Buy Form** - Input USDT/USDC, show DEMI amount, approve & buy buttons
+4. **User Dashboard** - Show DEMI balance
 
 ## Environment Variables
 
 Create `.env.local`:
 ```
-NEXT_PUBLIC_DEMI_CONTRACT_ADDRESS=
-NEXT_PUBLIC_POLYGON_RPC_URL=https://polygon-rpc.com
+REACT_APP_DEMI_CONTRACT_ADDRESS=
+REACT_APP_POLYGON_RPC_URL=https://polygon-rpc.com
 ```
+
+(Contract address will be provided after mainnet deployment)
 
 ## Project Structure
 ```
 demi-app/
 ├── src/
-│   ├── app/          # Next.js app router pages
-│   ├── components/   # React components
-│   ├── lib/          # Utilities and contract ABIs
-│   └── styles/       # Global styles
+│   ├── App.tsx         # Main app with React Router
+│   ├── index.tsx       # Entry point
+│   ├── pages/          # Page components
+│   │   └── Home.tsx
+│   ├── components/     # Reusable components (add yours here)
+│   └── lib/
+│       └── demi-abi.json  # Smart contract ABI
 ├── public/
-│   └── assets/       # Logo, images, icons
-└── README.md
+│   └── assets/         # DEMI logos
 ```
 
-## Features to Build
+## Ready to Build!
 
-1. **Landing Page** - Hero section with DEMI branding
-2. **Wallet Connection** - Connect MetaMask/WalletConnect
-3. **Buy Form** - Input USDT/USDC amount, get DEMI
-4. **User Dashboard** - Show DEMI balance and purchase history
-5. **Price Display** - Current DEMI price ($0.01 initially)
+Everything is set up. Start coding! 🚀
